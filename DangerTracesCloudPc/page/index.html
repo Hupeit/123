@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>危安追溯云平台</title>
+		<script src='../layui.js'></script>
+		<link rel="stylesheet" href="../css/bassic.css">
+		<link rel="stylesheet" href="../css/index.css">
+		<link rel="stylesheet" href="../css/layui.css">
+	</head>
+	<body>
+		<header class='header'>
+			<div class='header-content'>
+				<div class='header-content-logo fl'>
+					<img src="../image/logo.png">
+					<span class='text'>危安追溯云平台</span>
+				</div>
+				<div class="fl">
+
+				</div>
+				<div class="fr header-content-user">
+					<div class="user-logo fl">
+						<img src="" alt="">
+					</div>
+					<div class="user-name fl">
+						<span>欧阳娜娜</span>
+						<div class="user-identity">
+							<span>库管</span>
+							<i class="layui-icon layui-icon-triangle-d"></i>
+							<ul class="list">
+								<li>库管</li>
+								<li>申领人</li>
+								<li>同行人</li>
+								<li>审批人</li>
+								<li>监管人</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class='container'>
+			<div class='left-nav'>
+				<ul class='menu-list'>
+					<li class="item-active">平台总览</li>
+					<li>新品入库</li>
+					<li>库存盘点</li>
+					<li>库存管理</li>
+					<li>试剂领用</li>
+					<li>越权领用</li>
+					<li>回库超时</li>
+					<li>确认单</li>
+					<li>在用试剂</li>
+					<li>历史记录</li>
+					<li>监控管理</li>
+					<li>可疑火点</li>
+					<li>课题组管理</li>
+					<li>MSDS</li>
+				</ul>
+			</div>
+			<div class='right-content'>
+				<div class="platform-overview">
+					<ul class="layui-nav layui-bg-green platform-overview-nav" lay-filter="">
+						<li class="layui-nav-item">
+							<a href="">库存概况</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="">信息概况</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="">今日领用</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="">今日入库</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="">历史消耗</a>
+						</li>
+					</ul>
+					<div class="platform-overview-dataview">
+						<div class="chart" id="charts">
+
+						</div>
+						<div class="msg-list">
+							<ul class="list">
+								<li class="item">
+									<div class="num fl">
+										<span class="number">491</span>
+									</div>
+									<div class="text fl">
+										<p>液体类</p>
+										<p>库存种类数目 <span>491</span></p>
+										<p>库存可用总量 <span>53000L</span></p>
+									</div>
+								</li>
+								<li class="item">
+									<div class="num fl">
+										<span class="number">491</span>
+									</div>
+									<div class="text fl">
+										<p>固体类</p>
+										<p>库存种类数目 <span>21</span></p>
+										<p>库存可用总量 <span>65991kg</span></p>
+									</div>
+								</li>
+								<li class="item">
+									<div class="num fl">
+										<span class="number">491</span>
+									</div>
+									<div class="text fl">
+										<p>使用人数</p>
+										<p>累计至今</p>
+										<p>云平台已提供</p>
+										<p><span>1232451324</span>人次使用量</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<footer class="footer">
+					<div>
+						<span>&copy;20190421</span>
+						<span>杭州墨远信息科技有限公司</span>
+					</div>
+				</footer>
+			</div>
+		</section>
+		<script src="../js/jquery-1.7.1.min.js"></script>
+		<script src="../js/platform-overview.js"></script>
+		<script>
+			layui.use('element',function(){
+			    var element = layui.element
+			})
+            var dataEcharts = echarts.init(document.getElementById('charts'))
+            var option = {
+                backgroundColor: '#fff',
+                title: {
+                    text: '库存类别',
+                    left: 'center',
+                    top: 20,
+                    textStyle: {
+                        color: '#777',
+                        fontSize: 20
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {d}%"
+                },
+                visualMap: {
+                    show: false,
+                    min: 500,
+                    max: 600,
+                    inRange: {
+                        colorLightness: [0, 1]
+                    }
+                },
+                series: [{
+                    name: '库存类别',
+                    type: 'pie',
+                    clockwise: 'true',
+                    startAngle: '0',
+                    radius: '60%',
+                    center: ['50%', '50%'],
+                    data: [
+                        {
+                            value: 70,
+                            name: '语言',
+                            itemStyle: {
+                                normal: {
+                                    color: 'rgb(255,192,0)',
+                                    shadowBlur: '90',
+                                    shadowColor: 'rgba(0,0,0,0.8)',
+                                    shadowOffsetY: '30'
+                                }
+                            }
+                        },
+                        {
+                            value: 10,
+                            name: '美国科学&社会科学',
+                            itemStyle: {
+                                normal: {
+                                    color: 'rgb(1,175,80)'
+                                }
+                            }
+                        },
+                        {
+                            value: 20,
+                            name: '美国数学',
+                            itemStyle:{
+                                normal: {
+                                    color: 'rgb(122,48,158)'
+                                }
+                            }
+                        }
+                    ],
+                }]
+            }
+            dataEcharts.setOption(option)
+		</script>
+	</body>
+</html>

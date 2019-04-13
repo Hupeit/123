@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页</title>
+    <link rel="stylesheet" href="../css/bassic.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/login.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-wrap fl">
+            <ul class="list">
+                <li class="item-active">
+                    <span>登录</span>
+                </li>
+                <li>
+                    <span>激活</span>
+                </li>
+            </ul>
+        </div>
+        <div class="login-form fl">
+            <!--密码登录页-->
+            <form class="login-form-content loginPwd">
+                <div class="login-form-title">
+                    <img src="../image/logo.png">
+                </div>
+                <div class="login-form-text">
+                    <span>危安追溯云平台</span>
+                </div>
+                <div class="login-form-input uname">
+                    <input type="text" id="userphone" placeholder="请输入手机号">
+                </div>
+                <div class="login-form-input upwd">
+                    <input type="password" id="userPwd" placeholder="请输入密码">
+                </div>
+                <div class="login-form-changge">
+                    <a href="javascript:;" class="btn-tocodeLogin">验证码登录</a>
+                </div>
+                <a href="javascript:;" class="loginBtn tologin">登录</a>
+            </form>
+            <!--验证码登录页-->
+            <form class="login-form-content loginCode">
+                <div class="login-form-title">
+                    <img src="../image/logo.png">
+                </div>
+                <div class="login-form-text">
+                    <span>危安追溯云平台</span>
+                </div>
+                <div class="login-form-input uname">
+                    <input type="text" id="uname" placeholder="请输入手机号">
+                    <a href="javascript:;" class="getCode login-getcode">发送验证码</a>
+                </div>
+                <div class="login-form-input upwd">
+                    <input type="password" id="verCode" placeholder="请输入验证码">
+                </div>
+                <div class="login-form-changge">
+                    <a href="javascript:;" class="btn-topwdLogin">密码登录</a>
+                </div>
+                <a href="javascript:;" class="loginBtn tologin">登录</a>
+            </form>
+            <!--激活页-->
+            <form class="login-form-content activation">
+                <div class="input-group">
+                    <label for="userName" class="input-label">
+                        <span class="lable-title">您的姓名:</span>
+                    </label>
+                    <input type="text" id="userName" class="input-filed" placeholder="请输入姓名">
+                </div>
+                <div class="input-group">
+                    <label for="userpassword" class="input-label">
+                        <span class="lable-title">您的密码:</span>
+                    </label>
+                    <input type="password" id="userpassword" class="input-filed" placeholder="请输入密码">
+                </div>
+                <div class="input-group">
+                    <label for="spassword" class="input-label">
+                        <span class="lable-title">确认密码:</span>
+                    </label>
+                    <input type="text" id="spassword" class="input-filed" placeholder="请再次输入密码">
+                </div>
+                <div class="input-group">
+                    <label for="uphone" class="input-label">
+                        <span class="lable-title">手机号码:</span>
+                    </label>
+                    <input type="text" id="uphone" class="input-filed" placeholder="请输入手机号">
+                    <a href="javascript:;" class="getCode activation-getcode">发送验证码</a>
+                </div>
+                <div class="input-group">
+                    <label for="usercode" class="input-label">
+                        <span class="lable-title">验证码:</span>
+                    </label>
+                    <input type="text" id="usercode" class="input-filed" placeholder="请输入验证码">
+                </div>
+                <a href="javascript:;" class="loginBtn toativation">激活账号</a>
+            </form>
+            <form class="login-form-content confirm">
+                <div class="input-group">
+                    <label class="input-label" for="u-name">
+                        <span class="lable-title">您的姓名:</span>
+                    </label>
+                    <input type="text" id="u-name" class="input-filed" readonly>
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="u-email">
+                        <span class="lable-title">Email:</span>
+                    </label>
+                    <input type="text" class="input-filed" id="u-email" readonly>
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="u-school">
+                        <span class="lable-title">您的学校:</span>
+                    </label>
+                    <input type="text" class="input-filed" id="u-school" readonly>
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="u-class">
+                        <span class="lable-title">您的学院:</span>
+                    </label>
+                    <input type="text" class="input-filed" id="u-class" readonly>
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="u-scid">
+                        <span class="lable-title">您的学号:</span>
+                    </label>
+                    <input type="text" class="input-filed" id="u-scid" readonly>
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="u-phone">
+                        <span class="lable-title">手机号码:</span>
+                    </label>
+                    <input type="text" class="input-filed" id="u-phone" readonly>
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="u-uid">
+                        <span class="lable-title">身份证号:</span>
+                    </label>
+                    <input type="text" class="input-filed" id="u-uid" readonly>
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="u-sysid">
+                        <span class="lable-title">系统角色:</span>
+                    </label>
+                    <input type="text" class="input-filed" id="u-sysid" readonly>
+                </div>
+                <a href="javascript:;" class="loginBtn toconfirm">确认信息</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
